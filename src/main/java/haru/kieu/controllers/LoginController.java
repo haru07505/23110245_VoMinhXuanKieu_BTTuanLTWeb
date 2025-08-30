@@ -65,7 +65,7 @@ public class LoginController extends HttpServlet {
 			}
 		}
 
-		request.getRequestDispatcher("views/login.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/login.jsp").forward(request, response);
 	}
 
 	/**
@@ -90,7 +90,7 @@ public class LoginController extends HttpServlet {
 		if (username.isEmpty() || password.isEmpty()) {
 			alertMsg = "Tài khoản hoặc mật khẩu không được rỗng";
 			request.setAttribute("alert", alertMsg);
-			request.getRequestDispatcher("views/login.jsp").forward(request, response);
+			request.getRequestDispatcher("/views/login.jsp").forward(request, response);
 			return;
 		}
 
@@ -110,7 +110,7 @@ public class LoginController extends HttpServlet {
 		} else {
 			alertMsg = "Tài khoản hoặc mật khẩu không đúng";
 			request.setAttribute("alert", alertMsg);
-			request.getRequestDispatcher("views/login.jsp").forward(request, response);
+			request.getRequestDispatcher("/views/login.jsp").forward(request, response);
 		}
 	}
 

@@ -4,10 +4,10 @@ import java.sql.DriverManager;
 
 import java.sql.Connection;
 
-public class ConnectDB {
+public class DBConnection {
 
 	private final String serverName = "DESKTOP-4IDN9VP";
-	private final String dbName = "LTWebTest";
+	private final String dbName = "ServletCRUDMVC";
 	private final String portNumber = "1433";
 	private final String instance = "";
 	private final String userID = "sa";
@@ -21,11 +21,11 @@ public class ConnectDB {
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 		return DriverManager.getConnection(url, userID, password);
 	}
-
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		try {
-			System.out.println(new ConnectDB().getConnection());
+			System.out.println(new DBConnection().getConnection());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

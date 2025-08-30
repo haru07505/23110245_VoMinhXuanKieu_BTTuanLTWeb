@@ -5,23 +5,23 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-
 import java.io.IOException;
 
-import haru.kieu.model.User;
+import haru.kieu.service.CategoryService;
+import haru.kieu.service.CategoryServiceImpl;
 
 /**
- * Servlet implementation class WaitingController
+ * Servlet implementation class CategoryDeleteController
  */
-@WebServlet(urlPatterns = { "/waiting" })
-public class WaitingController extends HttpServlet {
+@WebServlet(urlPatterns = { "/admin/category/delete" })
+public class CategoryDeleteController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private final CategoryService cateService = new CategoryServiceImpl();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public WaitingController() {
+	public CategoryDeleteController() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -32,19 +32,9 @@ public class WaitingController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		if (session != null && session.getAttribute("account") != null) {
-			User u = (User) session.getAttribute("account");
-			if (u.getRoleid() == 1) {
-				response.sendRedirect(request.getContextPath() + "/admin/home");
-			} else if (u.getRoleid() == 2) {
-				response.sendRedirect(request.getContextPath() + "/manager/home");
-			} else {
-				response.sendRedirect(request.getContextPath() + "/admin/category/list");
-			}
-		} else {
-			response.sendRedirect(request.getContextPath() + "/logindb");
-		}
+		String id = request.getParameter("id");
+		cateService.delete(Integer.parseInt(id));
+		response.sendRedirect(request.getContextPath() + "/admin/category/list");
 	}
 
 	/**
