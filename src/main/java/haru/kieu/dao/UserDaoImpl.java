@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import haru.kieu.dao.UserDao;
 import haru.kieu.model.User;
 import haru.kieu.connectDB.ConnectDB;
 

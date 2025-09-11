@@ -3,7 +3,6 @@ package haru.kieu.service;
 import haru.kieu.dao.UserDao;
 import haru.kieu.dao.UserDaoImpl;
 import haru.kieu.model.User;
-import haru.kieu.service.UserService;
 
 public class UserServiceImpl implements UserService {
 

@@ -6,7 +6,6 @@ import java.util.List;
 import haru.kieu.dao.CategoryDao;
 import haru.kieu.dao.CategoryDaoImpl;
 import haru.kieu.model.Category;
-import haru.kieu.service.CategoryService;
 import haru.kieu.util.Constant;
 
 public class CategoryServiceImpl implements CategoryService {

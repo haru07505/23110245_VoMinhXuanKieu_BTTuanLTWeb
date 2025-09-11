@@ -14,7 +14,6 @@ import haru.kieu.model.User;
 /**
  * Servlet implementation class ForgotPassword
  */
-@SuppressWarnings("serial")
 @WebServlet(urlPatterns = { "/forgotpass" })
 public class ForgotPassword extends HttpServlet {
 	private static final long serialVersionUID = 1L;

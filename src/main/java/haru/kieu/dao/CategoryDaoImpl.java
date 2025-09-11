@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import haru.kieu.connectDB.DBConnection;
-import haru.kieu.dao.CategoryDao;
+//import haru.kieu.dao.CategoryDao;
 import haru.kieu.model.Category;
 
 public class CategoryDaoImpl extends DBConnection implements CategoryDao {
